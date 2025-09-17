@@ -51,17 +51,14 @@
       color: #ffc107;
       text-decoration: none;
     }
-    /* Ensured the "Haz tu pedido" button remains visible while scrolling */
     .cta-btn.sticky {
-      position: fixed; /* Changed to fixed to ensure visibility */
-      top: 50%; /* Center vertically */
-      right: 20px; /* Positioned at the right of the viewport */
-      transform: translateY(-50%) scale(0.8); /* Adjusted for vertical centering and scaling */
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%) scale(0.8);
       z-index: 1000;
-      animation: bounce 2s infinite; /* Adds a bouncing animation */
+      animation: bounce 2s infinite;
     }
-
-    /* Added animation to the "Haz tu pedido" button */
     @keyframes bounce {
       0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
@@ -72,6 +69,37 @@
       60% {
         transform: translateY(-5px);
       }
+    }
+
+    /* Estilo llamativo para los subtítulos */
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #d4a017; /* Dorado cervecero */
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      position: relative;
+      display: inline-block;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    /* Línea decorativa debajo del título */
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 70%;
+      height: 4px;
+      margin: 8px auto 0;
+      background: linear-gradient(90deg, #ffc107, #ff7300);
+      border-radius: 2px;
+    }
+
+    /* Animación de entrada */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -97,13 +125,13 @@
 
   <main>
     <section id="publicidad" class="text-center p-5">
-      <h2>🍺 La experiencia Borrachorama</h2>
+      <h3 class="section-title">🍺 La experiencia Borrachorama</h3>
       <p>Disfruta de una amplia selección de cervezas nacionales e internacionales, promociones exclusivas y un ambiente diseñado para que cada sorbo sea inolvidable.</p>
       <img src="img/borrachoramaimg.jpg" alt="Cerveza fría" class="img-fluid rounded mt-4" style="max-width:550px;">
     </section>
 
     <section id="fiesta" class="text-center p-5 bg-light">
-      <h2>🎉 Ambiente de fiesta</h2>
+      <h2 class="section-title">🎉 Ambiente de fiesta</h2>
       <p>No solo vendemos cerveza, vendemos momentos de alegría, amistad y diversión.</p>
       <img src="img/fiestacerveza.jpg" alt="Amigos brindando cerveza" class="img-fluid rounded mt-4" style="max-width:850px;">
     </section>
