@@ -51,6 +51,28 @@
       color: #ffc107;
       text-decoration: none;
     }
+    /* Ensured the "Haz tu pedido" button remains visible while scrolling */
+    .cta-btn.sticky {
+      position: fixed; /* Changed to fixed to ensure visibility */
+      top: 50%; /* Center vertically */
+      right: 20px; /* Positioned at the right of the viewport */
+      transform: translateY(-50%) scale(0.8); /* Adjusted for vertical centering and scaling */
+      z-index: 1000;
+      animation: bounce 2s infinite; /* Adds a bouncing animation */
+    }
+
+    /* Added animation to the "Haz tu pedido" button */
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
   </style>
 </head>
 <body>
@@ -58,14 +80,13 @@
   <!-- Header con logo y botones -->
   <header class="text-center">
     <div class="header-buttons">
-      <a href="login.html" class="btn btn-dark me-2">Iniciar Sesión</a>
       <button class="btn btn-warning text-dark" data-bs-toggle="modal" data-bs-target="#nosotrosModal">
         Acerca de Nosotros
       </button>
     </div>
     <img src="img/Borrachoramalogo.png" alt="Borrachorama Logo">
     <p class="mt-3">¡La fiesta empieza aquí con las mejores cervezas!</p>
-    <a href="#contacto" class="btn btn-warning text-dark cta-btn">¡Haz tu pedido ahora!</a>
+    <a href="#contacto" class="btn btn-warning text-dark cta-btn sticky">¡Haz tu pedido ahora!</a>
   </header>
 
   <!-- Banner Promociones -->
@@ -91,10 +112,14 @@
       <h2>📍 Contáctanos</h2>
       <p>Visítanos en Aguascalientes o escríbenos por redes sociales:</p>
       <div class="social-links">
-        <a href="https://facebook.com" target="_blank">Facebook</a> |
-        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://facebook.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook Logo" style="width: 30px; height: 30px;">
+        </a>
+        <a href="https://instagram.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Logo" style="width: 30px; height: 30px;">
+        </a>
       </div>
-      <p class="mt-3"><strong>Ubicación:</strong> Calle Fiestera #123, Aguascalientes, México</p>
+      <p class="mt-3"><strong>Ubicación:</strong> Calle paseo de la presa #123, Aguascalientes, México</p>
     </section>
   </main>
 
