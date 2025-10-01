@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Borrachorama </title>
+  <link rel="stylesheet" href="css/Borrachorama.css">
+  <style>
+    :root{
+      /* 🎨 Paleta Borrachorama */
+      --bg:hsla(0, 0%, 78%, 0.807);         /* Fondo crema */
+      --panel:#f6eded;      /* Panel claro */
+      --card:#f9f5e7;       /* Tarjetas claras */
+      --muted:#6b7280;      /* Texto gris */
+      --text:#111;          /* Texto principal negro */
+      --primary:#ffc107;    /* Amarillo cerveza */
+      --accent:#d4a017;     /* Dorado */
+      --ok:#10b981;
+      --warn:#c36405;
+      --danger:#ef4444;
+      --radius:16px;
+      --gap:16px;
+      --shadow:0 10px 25px rgba(0,0,0,.1);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    header{
+      padding:24px;
+      border-bottom:2px solid var(--accent);
+      background:linear-gradient(90deg,var(--primary),var(--accent));
+      color:#fff;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    header h1{margin:0; font-size:1.8rem; text-shadow:1px 1px 3px rgba(0,0,0,.3)}
+    main{max-width:1200px; margin:24px auto; padding:0 16px 64px}
+    .section{
+      background:var(--panel);
+      border:1px solid #e5e7eb;
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:var(--shadow);
+      margin-bottom:24px;
+    }
+    .section h2{
+      margin:0 0 12px;
+      font-size:1.5rem;
+      color:var(--accent);
+    }
+    .muted{color:var(--muted); font-size:.95rem}
+    .grid{display:grid; gap:var(--gap)}
+    @media (min-width: 780px){ .grid.cols-2{grid-template-columns:1fr 1fr} }
+    .card{
+      background:var(--card);
+      border:1px solid #e5e7eb;
+      border-radius:var(--radius);
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+    .badge{
+      display:inline-block; padding:4px 10px;
+      border-radius:999px; font-size:.8rem;
+      background:#fff8e1; border:1px solid var(--accent); color:var(--accent)
+    }
+    .badge.primary{background:var(--accent); color:#fff}
+    .list{margin:.25rem 0 0 .75rem; padding:0}
+    .list li{margin:.15rem 0}
+    .cta{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 14px; border-radius:12px; text-decoration:none;
+      background:var(--primary); color:#000; font-weight:600;
+      cursor:pointer; transition:all .2s ease;
+    }
+    .cta:hover{background:var(--accent); color:#fff}
+    .ok{color:var(--ok)} .warn{color:var(--warn)} .danger{color:var(--danger)}
+    details{
+      border:1px solid #e5e7eb;
+      border-radius:12px;
+      background:var(--card);
+      padding:12px
+    }
+    summary{cursor:pointer; font-weight:600}
+    .kpis{display:grid; gap:12px; margin-top:12px}
+    @media (min-width:680px){ .kpis{grid-template-columns:repeat(4,1fr)} }
+    .kpi{
+      background:#fff8e1;
+      border:1px solid var(--accent);
+      border-radius:12px;
+      padding:12px; text-align:center;
+    }
+    .kpi .n{font-size:1.25rem; font-weight:700}
+    .pill{
+      display:inline-flex; align-items:center; gap:6px;
+      padding:6px 10px; border-radius:999px;
+      border:1px solid var(--accent);
+      background:#fff8e1; font-size:.85rem;
+      cursor:pointer;
+    }
+    .checklist{display:grid; gap:8px; margin-top:8px}
+    .row{display:flex; align-items:center; gap:10px}
+    input[type="checkbox"]{width:18px; height:18px; accent-color: var(--primary)}
+    .footnote{font-size:.85rem; color:var(--muted)}
+    .code{
+      font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas;
+      background:#fdf6e3; border:1px solid #e5e7eb;
+      border-radius:10px; padding:10px
+    }
+    img.product-img{width:100%; border-radius:12px; margin-bottom:8px;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Borrachorama — Proyecto Simulado</h1>
+  </header>
+
+  <main>
+    <!-- Plataforma -->
+    <section class="section" aria-labelledby="plataformas">
+     
+
+      <div class="grid cols-2" role="list">
+        <!-- Opción A -->
+        <article class="card" role="listitem">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+            <h3 style="margin:0;">Opción A — WordPress + WooCommerce</h3>
+            <span class="badge primary"></span>
+          </div>
+          <p class="muted">Esta plataforma es fácil de usar y nos permite gestionar toda la tienda y su contenido. Nos ofrece mucha flexibilidad para personalizar el diseño y los flujos de compra, y tiene un bajo costo de operación.</p>
+          <ul class="list">
+          
+
+          </ul>
+          <div class="cta" onclick="document.getElementById('admin').scrollIntoView({behavior:'smooth'})"> Ver Admin</div>
+          
+        </article>
+
+        <!-- Opción B -->
+        <article class="card" role="listitem">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+            <h3 style="margin:0;">Opción B — Shopify</h3>
+            <span class="badge"></span>
+          </div>
+          <p class="muted">Es una opción cerrada que permite un arranque inmediato con el alojamiento web ya incluido. Ofrece un pago seguro y funciones extra mediante aplicaciones, pero tiene una suscripción mensual y su expansión está limitada a lo que el proveedor ofrezca.</p>
+          <ul class="list">
+            
+          </ul>
+          <div class="cta" onclick="document.getElementById('admin').scrollIntoView({behavior:'smooth'})">Ver Admin</div>
+          
+        </article>
+      </div>
+    </section>
+
+    <!-- Flujos simulados — Borrachorama -->
+    <section class="section" aria-labelledby="flujos">
+      <h2 id="flujos">Flujos ya simulados en el Front — Borrachorama</h2>
+      <p class="muted">Estos flujos funcionan sin back-end, usando datos de ejemplo y navegación entre pantallas.</p>
+
+      <div class="grid cols-2">
+        <!-- Cara al cliente -->
+        <div class="card">
+          <h3>Cara al cliente (E-commerce)</h3>
+          <div class="checklist">
+            <label class="row"><input type="checkbox" checked disabled> Catálogo de bebidas y licores cargado desde JSON</label>
+            <label class="row"><input type="checkbox" checked disabled> Detalle del producto: nombre, precio, descripción y categoría</label>
+            <label class="row"><input type="checkbox" checked disabled> Añadir al carrito y guardar en localStorage</label>
+            <label class="row"><input type="checkbox" checked disabled> Confirmación de compra simulada (checkout)</label>
+          </div>
+         
+        </div>
+
+        <!-- Back-office -->
+        <div class="card">
+          <h3>Back-office (E-business, simulado)</h3>
+          <div class="checklist">
+            <label class="row"><input type="checkbox" checked disabled> Resumen rápido: Muestra la cantidad de productos, ventas y pedidos recientes.</label>
+            <label class="row"><input type="checkbox" checked disabled> Inventario: Puedes ver los productos y cambiar la cantidad disponible.</label>
+            <label class="row"><input type="checkbox" checked disabled> Pedidos: Lista de pedidos con información básica: cliente, total y estado.</label>
+            <label class="row"><input type="checkbox" checked disabled> Soporte: Formulario de contacto que muestra un mensaje de “enviado correctamente”</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid de productos -->
+      <h3 style="margin-top:24px;">Productos disponibles — Borrachorama</h3>
+      <div class="grid cols-2" id="productos">
+        <div class="card">
+          <h4>Cerveza Corona</h4>
+          <p class="muted">Cerveza rubia, refrescante, 355 ml.</p>
+          <p><strong>$25.50</strong></p>
+          <div class="cta" onclick="agregarCarrito('Cerveza Corona', 25.50)">Agregar al carrito</div>
+        </div>
+
+        <div class="card">
+          <h4>Ron Bacardí</h4>
+          <p class="muted">Ron blanco, ideal para cocteles.</p>
+          <p><strong>$180.00</strong></p>
+          <div class="cta" onclick="agregarCarrito('Ron Bacardí', 180.00)">Agregar al carrito</div>
+        </div>
+
+        <div class="card">
+          <h4>Tequila José Cuervo</h4>
+          <p class="muted">Tequila reposado 100% agave.</p>
+          <p><strong>$350.00</strong></p>
+          <div class="cta" onclick="agregarCarrito('Tequila José Cuervo', 350.00)">Agregar al carrito</div>
+        </div>
+
+        <div class="card">
+          <h4>Coca-Cola</h4>
+          <p class="muted">Refresco clásico, 355 ml.</p>
+          <p><strong>$20.00</strong></p>
+          <div class="cta" onclick="agregarCarrito('Coca-Cola', 20.00)">Agregar al carrito</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Administración Simulada -->
+    <section id="admin" class="section">
+      <h2>Vista Administración </h2>
+      <p class="muted">Interfaz</p>
+
+      <!-- Inventario -->
+      <details class="card">
+        <summary>Inventario — actualizar stock (mock)</summary>
+        <div style="margin-top:12px;">
+          <div class="kpis">
+            <div class="kpi"><div class="n">8</div><div class="muted">Productos</div></div>
+            <div class="kpi"><div class="n warn">2</div><div class="muted">Bajo stock</div></div>
+            <div class="kpi"><div class="n ok">+10%</div><div class="muted">Rotación</div></div>
+            <div class="kpi"><div class="n warn">1</div><div class="muted">Alertas</div></div>
+          </div>
+          <p class="muted">Tabla (mock):</p>
+          <div class="code" role="table">
+            <div>CER-001 | Cerveza Corona | Stock: 12 <span class="pill" onclick="alert('Stock actualizado (simulado)')">Actualizar</span></div>
+            <div>CER-002 | Cerveza Modelo Especial | Stock: 5 <span class="pill" onclick="alert('Stock actualizado (simulado)')">Actualizar</span></div>
+            <div>CER-003 | Cerveza Tecate | Stock: 0 <span class="pill danger" onclick="alert('Reabastecer producto (simulado)')">Reabastecer</span></div>
+            <div>LIC-001 | Whisky Buchanan's | Stock: 3 <span class="pill" onclick="alert('Stock actualizado (simulado)')">Actualizar</span></div>
+            <div>LIC-002 | Ron Bacardí | Stock: 6 <span class="pill" onclick="alert('Stock actualizado (simulado)')">Actualizar</span></div>
+            <div>LIC-003 | Tequila José Cuervo | Stock: 2 <span class="pill" onclick="alert('Stock actualizado (simulado)')">Actualizar</span></div>
+            <div>BEB-001 | Coca-Cola | Stock: 10 <span class="pill" onclick="alert('Stock actualizado (simulado)')">Actualizar</span></div>
+            <div>BEB-002 | Agua Bonafont | Stock: 8 <span class="pill" onclick="alert('Stock actualizado (simulado)')">Actualizar</span></div>
+          </div>
+        </div>
+      </details>
+
+      <!-- Órdenes -->
+      <details class="card">
+        <summary>Órdenes — ver detalle (mock)</summary>
+        <div style="margin-top:12px;">
+          <div class="code" role="list">
+            <div role="listitem">
+              ORD-1001 — <strong>$125</strong> — 2 artículos — <span class="ok">Pagada</span> — 
+              <span class="pill" onclick="alert('Detalle de la orden (simulado)')">Ver detalle</span>
+            </div>
+            <div role="listitem">
+              ORD-1002 — <strong>$180</strong> — 1 artículo — <span class="warn">Pendiente</span> — 
+              <span class="pill" onclick="alert('Detalle de la orden (simulado)')">Ver detalle</span>
+            </div>
+            <div role="listitem">
+              ORD-1003 — <strong>$420</strong> — 1 artículo — <span class="ok">Pagada</span> — 
+              <span class="pill" onclick="alert('Detalle de la orden (simulado)')">Ver detalle</span>
+            </div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="section">
+      <h2>Explicación del Proyecto — Borrachorama</h2>
+       <li>✔ <strong>Front-end only:</strong> Todo el sistema funciona directamente en el navegador, sin backend ni base de datos real.</li>
+  <li>✔ <strong>Simulación de APIs:</strong> Los datos de productos, carrito y pedidos se cargan desde arrays en JavaScript que simulan respuestas JSON de un servidor.</li>
+  <li>✔ <strong>Mock data:</strong> Se usan datos ficticios de bebidas, licores y refrescos para demostrar la funcionalidad sin depender de una conexión real.</li>
+  <li>✔ <strong>E-commerce vs E-business:</strong> Se muestra la diferencia entre la parte visible al cliente (tienda) y el área administrativa (gestión de inventario y pedidos).</li>
+  <li>✔ <strong>Integración explicativa:</strong> Presenta de forma conceptual cómo se conectaría a una plataforma de ventas en línea, pero no realiza una conexión funcional.</li>
+  <li>✔ <strong>Prototipo interactivo:</strong> Los botones permiten consultar y visualizar datos simulados, ilustrando el flujo completo de compra en Borrachorama.</li>
+</ul>
+    </section>
+
+  </main>
+  <script src="js/Borrachorama.js"></script>
+</body>
+</html>
