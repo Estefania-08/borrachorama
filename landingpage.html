@@ -107,11 +107,26 @@
 
   <!-- Header con logo y botones -->
   <header class="text-center">
-    <div class="header-buttons">
-      <button class="btn btn-warning text-dark" data-bs-toggle="modal" data-bs-target="#nosotrosModal">
-        Acerca de Nosotros
-      </button>
-    </div>
+    <div class="header-buttons d-flex gap-2">
+  <!-- Botón Acerca de Nosotros -->
+  <button class="btn btn-warning text-dark" data-bs-toggle="modal" data-bs-target="#nosotrosModal">
+    Acerca de Nosotros
+  </button>
+
+  <!-- Menú desplegable Documentación -->
+  <div class="dropdown">
+    <button class="btn btn-dark dropdown-toggle" type="button" id="docDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+      Documentación
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="docDropdown">
+      <li><a class="dropdown-item" href="src/html/cart.html">Carrito</a></li>
+      <li><a class="dropdown-item" href="src/html/catalog.html">Catálogo</a></li>
+      <li><a class="dropdown-item" href="Disponibilidad.html">Disponibilidad</a></li>
+      <li><a class="dropdown-item" href="Status.html">Status</a></li>
+    </ul>
+  </div>
+</div>
+
     <img src="img/Borrachoramalogo.png" alt="Borrachorama Logo">
     <p class="mt-3">¡La fiesta empieza aquí con las mejores cervezas!</p>
     <a href="#contacto" class="btn btn-warning text-dark cta-btn sticky">¡Haz tu pedido ahora!</a>
