@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("catalog-container");
 
