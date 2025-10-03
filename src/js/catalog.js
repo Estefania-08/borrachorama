@@ -10,10 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
         card.classList.add("product-card");
 
         card.innerHTML = `
-          <div class="product-name">${product.name}</div>
-          <div class="product-price">$${product.price.toFixed(2)}</div>
-          <button>Agregar al carrito</button>
-        `;
+  ${product.image ? `<img src="${product.image}" alt="${product.name}" class="product-image">` : ""}
+  <div class="product-name">${product.name}</div>
+  <div class="product-price">$${product.price.toFixed(2)}</div>
+  <button>Agregar al carrito</button>
+`;
 
         container.appendChild(card);
       });
